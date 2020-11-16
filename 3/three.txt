@@ -1,0 +1,3 @@
+select col.fullname, col.subdivision_name, col.birth_date, learning.course_name, learning.score from col join learning on col.id = learning.col_id where; - вывести всех для наглядности.
+
+select col.fullname, col.birth_date, learning.score from col join learning on col.id = learning.col_id where col.subdivision_name like 'бухгалтерия' and learning.course_name like 'excel' and learning.score > 80; - вывести фио, др, балл для тех, кто числится в бухгалтерии, прошел курс excel, набрал больше 80 баллов.

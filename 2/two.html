@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>two</title>
+	<style>
+		table {
+			text-align: center;
+			border-collapse: collapse;
+		}
+		td {
+			width: 100px;
+			height: 50px;
+			border: 1px solid black;
+		}
+		.red {
+			background-color: red;
+		}
+		.blue {
+			color: blue;
+			font-style: italic;
+		}
+	</style>
+</head>
+<body>
+	<table>
+		<tbody>
+			<tr>
+				<td class="red">1</td>
+				<td>2</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>
+			</tr>
+			<tr>
+				<td>7</td>
+				<td>8</td>
+				<td>9</td>
+			</tr>
+			<tr>
+				<td>10</td>
+				<td class="blue">11</td>
+				<td>12</td>
+			</tr>
+		</tbody>
+	</table>
+	<select id="color">
+		<option value=""></option>
+		<option value="red">red</option>
+		<option value="orange">orange</option>
+		<option value="yellow">yellow</option>
+		<option value="green">green</option>
+		<option value="cyan">cyan</option>
+		<option value="blue">blue</option>
+		<option value="violet">violet</option>
+	</select>
+	<select id="number">
+		<option value=""></option>
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>
+		<option value="7">7</option>
+		<option value="8">8</option>
+		<option value="9">9</option>
+		<option value="10">10</option>
+		<option value="11">11</option>
+		<option value="12">12</option>
+	</select>
+	<input id="paint" type="button" name="button" value="GO!" />
+	<script>
+		document.getElementById('paint').onclick = function() {
+			let color = document.getElementById('color').value;
+			let number = document.getElementById('number').value;
+			if ((color == '') || (number == '')) {
+				alert('Вы забыли выбрать цвет и/или номер ячейки!');
+			} else {
+				let tds = document.querySelectorAll('td');
+				for(i = 0; i < tds.length; i++) {
+					if (tds[i].innerText !== number) {
+						//tds[i].style.color = color; // тут смотря что имелось ввиду в условии	
+						tds[i].style.backgroundColor = color;
+					}
+				}
+			}
+		}
+	</script>
+</body>
+</html>
